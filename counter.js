@@ -1,4 +1,7 @@
-const timerRef = document.getElementById('timer');
+const dRef = document.getElementById('d');
+const hRef = document.getElementById('h');
+const mRef = document.getElementById('m');
+const sRef = document.getElementById('s');
 let airDate;
 
 (function() {
@@ -14,11 +17,10 @@ let airDate;
 function updateTimer() {
   now = new Date().getTime();
   const timeleft = airDate - now;
-  const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  const hours = formatTime(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-  const minutes = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
-  const seconds = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
-  timerRef.innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+  dRef.innerHTML = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  hRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  mRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
+  sRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
 }
 
 function formatTime(time) {
