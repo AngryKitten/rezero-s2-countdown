@@ -15,8 +15,15 @@ function updateTimer() {
   now = new Date().getTime();
   const timeleft = airDate - now;
   const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+  const hours = formatTime(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  const minutes = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
+  const seconds = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
   timerRef.innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+}
+
+function formatTime(time) {
+  if (time < 10) {
+    time = `0${time}`;
+  }
+  return time;
 }
