@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+#main {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  height: 100%;
+}
+
+img:first-child {
+  display: none;
+}
+
+#timer {
+  font-size: 48px;
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    flex-direction: row;
+  }
+
+  img {
+    height: 300px;
+  }
+
+  img:first-child {
+    display: block;
+  }
+}
