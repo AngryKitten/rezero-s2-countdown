@@ -1,5 +1,32 @@
 body {
   margin: 0;
+  position: relative;
+}
+
+#dark-mode {
+  display: none;
+}
+
+#dark-mode-img {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  bottom: 16px;
+  height: 32px;
+  position: fixed;
+  right: 16px;
+  transform: rotate(0deg);
+  transition: 0.5s;
+  width: 32px;
+}
+
+#dark-mode:checked + label > #dark-mode-img {
+  transform: rotate(180deg);
+}
+
+#dark-mode:checked ~ #main {
+  background-color: black;
+  color: white;
 }
 
 #main {
@@ -16,11 +43,11 @@ section {
   justify-content: center;
 }
 
-img {
+.rem {
   height: 100%;
 }
 
-img:first-child {
+.rem:first-child {
   display: none;
 }
 
@@ -42,11 +69,11 @@ img:first-child {
     flex-direction: row;
   }
 
-  img {
+  .rem {
     height: 300px;
   }
 
-  img:first-child {
+  .rem:first-child {
     display: block;
   }
 }
