@@ -23,7 +23,6 @@ function updateTimer() {
     mRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
     sRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
   } else {
-    console.log('bacon');
     document.getElementById('counter-main').classList.add('hidden');
     document.getElementById('counter-end').classList.remove('hidden');
   }
