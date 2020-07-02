@@ -17,10 +17,16 @@ let airDate;
 function updateTimer() {
   now = new Date().getTime();
   const timeleft = airDate - now;
-  dRef.innerHTML = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-  hRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-  mRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
-  sRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
+  if (timeleft > 0) {
+    dRef.innerHTML = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    hRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    mRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)));
+    sRef.innerHTML = formatTime(Math.floor((timeleft % (1000 * 60)) / 1000));
+  } else {
+    console.log('bacon');
+    document.getElementById('counter-main').classList.add('hidden');
+    document.getElementById('counter-end').classList.remove('hidden');
+  }
 }
 
 function formatTime(time) {

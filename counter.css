@@ -43,6 +43,10 @@ section {
   justify-content: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .rem {
   height: 100%;
 }
@@ -62,6 +66,20 @@ section {
 .description {
   font-size: 24px;
   opacity: 0.7;
+}
+
+#counter-end {
+  width: 100%;
+}
+
+.end-text {
+  font-size: 24px;
+  text-align: center;
+}
+
+.end-img {
+  margin: 8px 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 600px) {
