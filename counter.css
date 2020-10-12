@@ -78,7 +78,8 @@ section {
 }
 
 .end-img {
-  margin: 8px 0;
+  display: block;
+  margin: 8px auto;
   width: 100%;
 }
 
@@ -93,5 +94,9 @@ section {
 
   .rem:first-child {
     display: block;
+  }
+
+  .end-img {
+    width: 500px;
   }
 }
