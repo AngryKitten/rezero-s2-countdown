@@ -7,7 +7,7 @@ let airDate;
 (function() {
   let now = new Date();
   const utcOffset = now.getUTCHours() - now.getHours();
-  airDate = new Date(2021, 0, 1, 14 - utcOffset, 30, 0, 0).getTime();
+  airDate = new Date(2021, 0, 6, 14 - utcOffset, 30, 0, 0).getTime();
   updateTimer();
   setInterval(() => {
     updateTimer();
